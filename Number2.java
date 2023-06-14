@@ -15,7 +15,8 @@ public class StackBasic {
         }
         else{
             top = top + 1;
-            stackArray.add(value);
+            if(stackArray.size() > top) stackArray.set(top, value);
+            else    stackArray.add(value);
         }
     }
         // Remove element from top of stack
