@@ -14,7 +14,8 @@ public class StackBasic {
             System.out.println("Stack Overflow");
         }
         else{
-            
+            top = top + 1;
+            stackArray.add(value);
         }
     }
         // Remove element from top of stack
