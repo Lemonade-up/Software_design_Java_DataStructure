@@ -6,47 +6,52 @@
 // Output
 // Print BALANCED in the parenthesis is balanced, NOT BALANCED otherwise.
 
-import java.util.*;
+import java.util.Stack;
+import java.util.Scanner;
 
 
 public class Main {
-    public static void main(String args[]){
+    public static boolean checkForBalance(String inputStr){
         Stack<String> stackLeft = new Stack<String>();
-        Scanner inputScan = new Scanner(System.in);
-        boolean equalOrNot = true;
-        String outputPush;
-
-        System.out.println("Enter Input:");
-        String inputGet = inputScan.nextLine();
-
-        for(int i = 0; i <inputGet.length(); i++){
-            String letter = String.valueOf(inputGet.charAt(i));
+        for(int i = 0; i <inputStr.length(); i++){
+            String letter = String.valueOf(inputStr.charAt(i));
             if(letter == "{" || letter == "(" || letter == "["){
                 stackLeft.push(letter);
                 continue;
             }
+            if (stackLeft.isEmpty()) return false;
             String check;
-
             switch(letter) {
                 case "}":
                     check = stackLeft.pop();
-                    if(check == "("  || check == "[") equalOrNot = false;
+                    if(check == "("  || check == "[") return false;
                     break;
                 case ")":
                     check = stackLeft.pop();
-                    if(check == "{"  || check == "[") equalOrNot = false;
+                    if(check == "{"  || check == "[") return false;
                     break;
                 case "]":
                     check = stackLeft.pop();
-                    if(check == "{"  || check == "(") equalOrNot = false;
+                    if(check == "{"  || check == "(") return false;
                     break;
             }      
         }
+    return (stackLeft.isEmpty());
+    }
 
-        if(equalOrNot)outputPush = "BALANCED";
+    public
+    static void main(String[] args){
+        Scanner inputScan = new Scanner(System.in);
+        String outputPush;
+        String inputGet;
+
+        System.out.println("Enter Input:");
+        inputGet = inputScan.nextLine();
+
+        if(checkForBalance(inputGet))outputPush = "BALANCED";
         else outputPush = "NOT BALANCED";
 
-        System.out.println(inputGet +  "is" + outputPush);
+        System.out.println(inputGet +  " is " + outputPush);
 
 
     }
