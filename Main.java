@@ -13,6 +13,7 @@ public class Main {
     public static main(String args[]){
         Stack<String> stackLeft = new Stack<String>();
         Scanner inputScan = new Scanner(System.in);
+        boolean equalOrNot;
 
         System.out.Println("Enter Input:");
         String inputGet = inputScan.nextLine();
@@ -23,8 +24,15 @@ public class Main {
                 stackLeft.push(letter);
                 continue;
             }
-            if(letter == "}" || letter == ")" || letter == "]"){
-                stackLeft.pop();
+            char check;
+
+            switch(letter) {
+                case "}":
+                    check = stackLeft.pop();
+                    if(check == "("  || check == "[") equalOrNot = false;
+                    break;
+                
+                
             }
         }
 
