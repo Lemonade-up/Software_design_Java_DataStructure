@@ -20,7 +20,9 @@ public class StackBasic {
     }
         // Remove element from top of stack
     public void pop() {
-
+        if(top == -1){
+            System.out.println("Stack Underflow");
+        }
     }
         // Return top of stack
     public int peek() {
