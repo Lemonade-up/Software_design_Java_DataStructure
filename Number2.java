@@ -28,6 +28,9 @@ public class StackBasic {
     }
         // Return top of stack
     public int peek() {
+        if(top == -1){
+            System.out.println("Stack Underflow");
+        }
 
     }
     public static void main(String args[]) {
