@@ -15,8 +15,7 @@ public class StackBasic {
         }
         else{
             top = top + 1;
-            if(stackArray.size() > top) stackArray.set(top, value);
-            else    stackArray.add(value);
+            stackArray[top];
         }
     }
         // Remove element from top of stack
@@ -31,7 +30,7 @@ public class StackBasic {
         if(top == -1){
             System.out.println("Stack Underflow");
         }
-        else stackArray.get(top);
+        else return stackArray[top];
 
     }
     public static void main(String args[]) {
