@@ -31,6 +31,7 @@ public class StackBasic {
         if(top == -1){
             System.out.println("Stack Underflow");
         }
+        else stackArray.get(top);
 
     }
     public static void main(String args[]) {
