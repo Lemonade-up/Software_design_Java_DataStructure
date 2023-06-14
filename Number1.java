@@ -10,7 +10,7 @@ import java.util.Stack;
 import java.util.Scanner;
 
 
-public class Main {
+public class Number1 {
     public static boolean checkForBalance(String inputStr){
         Stack<Character> stackLeft = new Stack<>();
         for(int i = 0; i < inputStr.length(); i++){
@@ -47,10 +47,10 @@ public class Main {
         System.out.println("Enter Input:");
         inputGet = inputScan.nextLine();
 
-        if (checkForBalance(inputGet))
-            System.out.println("True");
-        else
-            System.out.println("False");
+        if(checkForBalance(inputGet))outputPush = "BALANCED";
+        else outputPush = "NOT BALANCED";
+
+        System.out.println(inputGet +  " is " + outputPush);
 
 
     }
