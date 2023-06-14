@@ -23,6 +23,9 @@ public class Main {
                 stackLeft.push(letter);
                 continue;
             }
+            if(letter == "}" || letter == ")" || letter == "]"){
+                stackLeft.pop();
+            }
         }
 
 
