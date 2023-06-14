@@ -12,27 +12,27 @@ import java.util.Scanner;
 
 public class Main {
     public static boolean checkForBalance(String inputStr){
-        Stack<String> stackLeft = new Stack<String>();
-        for(int i = 0; i <inputStr.length(); i++){
-            String letter = String.valueOf(inputStr.charAt(i));
-            if(letter == "{" || letter == "(" || letter == "["){
+        Stack<Character> stackLeft = new Stack<>();
+        for(int i = 0; i < inputStr.length(); i++){
+            char letter = inputStr.charAt(i);
+            if(letter == '{' || letter == '(' || letter == '['){
                 stackLeft.push(letter);
                 continue;
             }
             if (stackLeft.isEmpty()) return false;
-            String check;
+            char check;
             switch(letter) {
-                case "}":
+                case '}':
                     check = stackLeft.pop();
-                    if(check == "("  || check == "[") return false;
+                    if (check == '(' || check == '[') return false;
                     break;
-                case ")":
+                case ')':
                     check = stackLeft.pop();
-                    if(check == "{"  || check == "[") return false;
+                    if (check == '{' || check == '[') return false;
                     break;
-                case "]":
+                case ']':
                     check = stackLeft.pop();
-                    if(check == "{"  || check == "(") return false;
+                    if (check == '(' || check == '{') return false;
                     break;
             }      
         }
@@ -47,10 +47,10 @@ public class Main {
         System.out.println("Enter Input:");
         inputGet = inputScan.nextLine();
 
-        if(checkForBalance(inputGet))outputPush = "BALANCED";
-        else outputPush = "NOT BALANCED";
-
-        System.out.println(inputGet +  " is " + outputPush);
+        if (checkForBalance(inputGet))
+            System.out.println("True");
+        else
+            System.out.println("False");
 
 
     }
