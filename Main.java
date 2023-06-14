@@ -31,8 +31,14 @@ public class Main {
                     check = stackLeft.pop();
                     if(check == "("  || check == "[") equalOrNot = false;
                     break;
-                
-                
+                case ")":
+                    check = stackLeft.pop();
+                    if(check == "{"  || check == "[") equalOrNot = false;
+                    break;
+                case "]":
+                    check = stackLeft.pop();
+                    if(check == "{"  || check == "(") equalOrNot = false;
+                    break;
             }
         }
 
