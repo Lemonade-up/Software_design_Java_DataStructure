@@ -12,11 +12,14 @@ import java.util.Stack;
 public class Main {
     public static main(String args[]){
         Stack<String> stackLeft = new Stack<String>();
-        Stack<String> stackRight = new Stack<String>();
         Scanner inputScan = new Scanner(System.in);
 
-        System.out.Println("Enter Input:")
+        System.out.Println("Enter Input:");
         String inputGet = inputScan.nextLine();
+
+        for(i = 0; i <inputGet.length(); i++){
+            char letter = inputGet.charAt(i);
+        }
 
 
 
