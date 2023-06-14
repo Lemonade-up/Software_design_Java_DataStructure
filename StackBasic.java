@@ -15,7 +15,7 @@ public class StackBasic {
         }
         else{
             top = top + 1;
-            stackArray[top];
+            stackArray[top] = value;
         }
     }
         // Remove element from top of stack
@@ -29,6 +29,7 @@ public class StackBasic {
     public int peek() {
         if(top == -1){
             System.out.println("Stack Underflow");
+            return 0;
         }
         else return stackArray[top];
 
