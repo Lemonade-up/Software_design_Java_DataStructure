@@ -19,6 +19,10 @@ public class Main {
 
         for(i = 0; i <inputGet.length(); i++){
             char letter = inputGet.charAt(i);
+            if(letter == "{" || letter == "(" || letter == "["){
+                stackLeft.push(letter);
+                continue;
+            }
         }
 
 
