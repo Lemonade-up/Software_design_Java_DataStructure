@@ -11,5 +11,10 @@ public class Number3{
                 p++;
             }
         }
+    return decimal;
+    }
+    public static void main(String args[]){
+        Number3 objik = new Number3();
+        System.out.println(input + " ---> " + Output);
     }
 }
