@@ -6,25 +6,26 @@
 // Output
 // Print BALANCED in the parenthesis is balanced, NOT BALANCED otherwise.
 
-import java.util.Scanner;
-import java.util.Stack;
+import java.util.*;
+
 
 public class Main {
-    public static main(String args[]){
+    public static void main(String args[]){
         Stack<String> stackLeft = new Stack<String>();
         Scanner inputScan = new Scanner(System.in);
-        boolean equalOrNot;
+        boolean equalOrNot = true;
+        String outputPush;
 
-        System.out.Println("Enter Input:");
+        System.out.println("Enter Input:");
         String inputGet = inputScan.nextLine();
 
-        for(i = 0; i <inputGet.length(); i++){
-            char letter = inputGet.charAt(i);
+        for(int i = 0; i <inputGet.length(); i++){
+            String letter = String.valueOf(inputGet.charAt(i));
             if(letter == "{" || letter == "(" || letter == "["){
                 stackLeft.push(letter);
                 continue;
             }
-            char check;
+            String check;
 
             switch(letter) {
                 case "}":
@@ -39,9 +40,13 @@ public class Main {
                     check = stackLeft.pop();
                     if(check == "{"  || check == "(") equalOrNot = false;
                     break;
-            }
+            }      
         }
 
+        if(equalOrNot)outputPush = "BALANCED";
+        else outputPush = "NOT BALANCED";
+
+        System.out.println(inputGet +  "is" + outputPush);
 
 
     }
