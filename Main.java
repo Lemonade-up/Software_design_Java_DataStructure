@@ -38,9 +38,8 @@ public class Main {
         }
     return (stackLeft.isEmpty());
     }
-
-    public
-    static void main(String[] args){
+    
+    public static void main(String[] args){
         Scanner inputScan = new Scanner(System.in);
         String outputPush;
         String inputGet;
